@@ -1,0 +1,47 @@
+extends layout
+
+block content
+  .container
+    .row.d-flex.justify-content-center
+      .col-md-7
+        h3.text-center Preparación de la BD para Datos Viales
+        br
+        table(style='width: 100%;')
+          tbody
+            tr 
+              td(colspan="3")
+                hr
+            tr
+              td(colspan='3')
+                p(style='text-align:center') 
+                  b -Principales procesos-
+            tr
+              td(style='width: 35%;' rowspan='2')
+                h5 1° Migrar bd desde Access hacia Mongo y seleccionar 'caseta' o 'estaciones'
+              td(style='width: 50%;')
+                input#formFileMultiple.form-control.cDiss(type='text' placeholder='Ejemplo: C:\\Users\\Usuario\\Escritorio\\BD.accdb')
+              td(style='width: 15%;' rowspan='2')
+                button#export.btn.btn-primary.col-md-12.cDiss(type='button') Exportar
+            tr 
+              td(style='width: 50%;')
+                input#radio1.btn-check.cDiss(type='radio' name='options' value='casetas' autocomplete='off' checked='')
+                label.btn.btn-sm.btn-outline-primary.cDiss(style='width:50%' for='radio1') Casetas
+                input#radio2.btn-check.cDiss(type='radio' name='options' value='estaciones' autocomplete='off')
+                label.btn.btn-sm.btn-outline-primary.cDiss(style='width:50%' for='radio2') Estaciones
+            tr(style='height: 35px')
+            tr
+              td(style='width: 35%;')
+                h5 2° Añadir colecciones de "Estados" y "PaletasKM"
+              td(style='width: 65%;' colspan='2')
+                button#addCollections.btn.btn-primary.col-md-12.cDiss(type='button') Añadir
+    br
+    br
+    .row.d-flex.justify-content-center
+      .col-md-6
+        #img-area.text-center(style="display:none")
+          img(src='https://c.tenor.com/G7LfW0O5qb8AAAAC/loading-gif.gif' alt='' width='100' height='90')
+          br
+          label.form-label(style="color: #007add;") Insertando Datos. Este Proceso durará un tiempo...
+        #completed.text-center(style="display:none")
+          label.form-label(style="color: #198754;") 
+            b ✔ Datos Insertados con éxito 
